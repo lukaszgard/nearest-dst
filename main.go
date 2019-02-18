@@ -8,10 +8,11 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-var logFilename string
+var logFilename, port string
 
 func init() {
 	flag.StringVar(&logFilename, "log-file", "", "name of logfile")
+	flag.StringVar(&port, "port", "8080", "port application")
 	flag.Parse()
 
 	log.SetFormatter(&log.TextFormatter{
@@ -35,5 +36,5 @@ func main() {
 	log.Info("Starting Rest API")
 
 	router := newRouter()
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
