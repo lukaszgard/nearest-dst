@@ -24,10 +24,10 @@ $ go get github.com/lukaszgard/nearest-dst
 $ nearest-dst
 `
 
-- or with providing a path to log file and providing port (def. 8080):
+- or with providing a path to log file and providing port is taken from env as 'PORT':
 
 `
-$ nearest-dst -log-file=nearest.log -port=8080
+$ nearest-dst -log-file=nearest.log
 `
 
 ## sample request:
